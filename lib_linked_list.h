@@ -1,6 +1,6 @@
 #ifndef LIB_LINKED_LIST
 #define LIB_LINKED_LIST
-
+#include <iostream>
 class Node{
 private:
     Node* next;
@@ -50,14 +50,16 @@ private:
     int size;
 public:
     DoubleLinkedList();
-    int size();
+    int getSize();
     bool isEmpty();
     Node* first();
     Node* last();
     Node* search(int x);
     void insert(int x, Node* k);
-    void del();
+    void add(int x);
+    void del(Node* temp);
     void clear();
+    friend std::ostream& operator<<(std::ostream& out, DoubleLinkedList* list);
 };
 
 #endif
