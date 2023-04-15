@@ -1,13 +1,27 @@
 #include "lib_hash.h"
 
-HashTable::hashTable(int c){
-  capacity = c;
-  size = 0;
-  t = new int[c];
+HashTable::HashTable(int c){
+  this->capacity = c;
+  this->size = 0;
+  this->t = new int[c];
   
   for(int i = 0; i < c; i++){
     t[i] = 0;
   }
+}
+
+bool HashTable::empty(){
+	if (size == 0)
+		return true;
+	else
+		return false;
+}
+
+bool HashTable::full(){
+	if (size == capacity)
+		return true;
+	else
+		return false;
 }
 
 int HashTable::hashFunction(int x){

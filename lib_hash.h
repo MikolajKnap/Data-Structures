@@ -2,19 +2,25 @@
 #define LIB_HASH_H
 
 class HashTable{
-int capacity;
-int size;
-int *t;
+private:
+    int capacity;
+    int size;
+    int *t;
 
-HashTable(int c);
+public:
+    
+    HashTable(int c);
+    bool empty();
+    bool full();
 
-int hashFunction(int x);
 
-int insert(int x);
+    int hashFunction(int x);
 
-void del(int x);
+    int insert(int x);
 
-int search(int x);
+    void del(int x);
+
+    int search(int x);
 
 };
 
